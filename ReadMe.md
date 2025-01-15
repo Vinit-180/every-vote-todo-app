@@ -7,52 +7,187 @@ Develop a full stack Todo List application using the provided backend code for a
 - **Backend:** Express.js (authentication code provided)
 - **Frontend:** React.js (architecture is flexible)
 
-## Requirements
+## Features
+- **Task Management**: Add, edit, and delete tasks with ease (CRUD Operations).
+- **Real-time Updates**: Experience smooth and seamless task updates.
+- **User-friendly Interface**: Intuitive and responsive design for all devices.
+- **Persistence**: Tasks are saved and retrieved effortlessly, ensuring no data loss.
 
-### 1. Authentication:
-   - Implement user authentication using the provided backend code.
-   - Ensure secure login and registration processes.
-   - Use JWT or session-based authentication as per the provided backend architecture.
+## Technologies Used
 
-### 2. Todo List Features:
-   - **CRUD Operations:** 
-     - Users should be able to create, read, update, and delete their todo items.
-   - **Todo Item Structure:**
-     - Each todo item should have at least the following properties:
-       - Title (string)
-       - Description (string)
-       - Status (boolean: completed or not)
-       - Due Date (date)
-   - **User-specific Todos:**
-     - Ensure that each user can only manage their own todo items.
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Styling**: CSS and TailwindCSS
+- **Deployment**: Hosted on [Platform Name, e.g., Heroku, Vercel, AWS]
 
-### 3. Frontend Requirements:
-   - Use React.js for the frontend.
-   - Implement a clean and user-friendly interface.
-   - Ensure responsiveness for different screen sizes.
-   - Use state management (e.g., Context API, Redux) to manage application state.
-   - Include validation for user inputs.
 
-### 4. Additional Features (Optional):
-   - Implement sorting and filtering options for the todo list.
-   - Add user notifications for actions (e.g., todo added, updated, deleted).
-   - Provide a dark mode toggle.
+## Installation
 
-### 5. Testing:
-   - Write unit tests for critical components and functions.
-   - Ensure the application is free of critical bugs.
+To get started with the Every Vote To-Do App, follow these steps:
 
-### 6. Documentation:
-   - Provide clear documentation on how to set up and run the application.
-   - Include comments in the code to explain key functionalities.
+### Prerequisites
 
-### 7. Submission Guidelines:
-   - Submit the code repository (e.g., GitHub) with a clear commit history.
-   - Include a README file with instructions on how to run the application.
-   - Provide a demo link if hosted online.
+Ensure you have the following installed on your machine:
+- Node.js
+- MySQl
 
-## Evaluation Criteria
-- Code quality and organization.
-- Functionality and adherence to requirements.
-- User interface design and user experience.
-- Testing coverage and documentation.
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vinit-180/every-vote-todo-app.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd every-vote-todo-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Set up environment variables:
+   
+   Create a `.env` file in the root directory. consider the `.env.example` for setting up the variables.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Access the backend app in your browser at `http://localhost:8000`.
+
+7. Now go to `todo-app` directory:
+   ```bash
+   cd todo-app
+   ```
+
+8. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+9. Start the development server:
+   ```bash
+   npm run dev
+   ```
+10. Access the backend app in your browser at `http://localhost:5173`.
+
+
+## Usage
+
+1. Open the app in your browser.
+2. Add tasks by typing in the input field and clicking the **Add Task** button.
+3. Delete tasks when they are completed.
+
+```
+
+Directory structure:
+└── vinit-180-every-vote-todo-app/
+    ├── ReadMe.md
+    ├── backend.md
+    ├── package.json
+    ├── tsconfig.json
+    ├── .env.example
+    ├── src/
+    │   ├── env.ts
+    │   ├── index.ts
+    │   ├── controllers/
+    │   │   ├── index.ts
+    │   │   └── Auth/
+    │   │       ├── index.ts
+    │   │       ├── login.controller.ts
+    │   │       └── register.controller.ts
+    │   ├── db/
+    │   │   ├── db.create.ts
+    │   │   ├── db.setup.ts
+    │   │   └── index.ts
+    │   ├── entities/
+    │   │   ├── core.entity.ts
+    │   │   ├── index.ts
+    │   │   └── user.entity.ts
+    │   ├── errors/
+    │   │   ├── argumentValidation.error.ts
+    │   │   ├── custom.error.ts
+    │   │   ├── index.ts
+    │   │   └── unauthorized.error.ts
+    │   ├── middlewares/
+    │   │   ├── error.middleware.ts
+    │   │   ├── index.ts
+    │   │   └── route.middleware.ts
+    │   ├── routes/
+    │   │   ├── authRouter.ts
+    │   │   └── index.ts
+    │   ├── services/
+    │   │   ├── index.ts
+    │   │   └── user.service.ts
+    │   ├── types/
+    │   │   └── index.ts
+    │   ├── utils/
+    │   │   ├── checkAuth.ts
+    │   │   ├── encrypt.ts
+    │   │   ├── errorHandler.ts
+    │   │   ├── generate.ts
+    │   │   ├── index.ts
+    │   │   ├── logger.ts
+    │   │   ├── password.ts
+    │   │   └── validateIp.ts
+    │   └── validators/
+    │       ├── index.ts
+    │       ├── auth/
+    │       │   ├── index.ts
+    │       │   ├── login.validator.ts
+    │       │   └── register.validator.ts
+    │       └── title/
+    │           ├── createTitle.validator.ts
+    │           └── index.ts
+    └── todo-app/
+        ├── README.md
+        ├── components.json
+        ├── eslint.config.js
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── postcss.config.js
+        ├── tailwind.config.js
+        ├── tsconfig.app.json
+        ├── tsconfig.json
+        ├── tsconfig.node.json
+        ├── vite.config.ts
+        ├── .gitignore
+        ├── public/
+        └── src/
+            ├── App.css
+            ├── App.tsx
+            ├── index.css
+            ├── main.tsx
+            ├── store.ts
+            ├── vite-env.d.ts
+            ├── assets/
+            ├── components/
+            │   ├── Auth.tsx
+            │   ├── Navbar.tsx
+            │   ├── Theme-Provider.tsx
+            │   ├── Toggle.tsx
+            │   └── ui/
+            │       ├── avatar.tsx
+            │       ├── button.tsx
+            │       ├── calendar.tsx
+            │       ├── card.tsx
+            │       ├── dialog.tsx
+            │       ├── dropdown-menu.tsx
+            │       ├── input.tsx
+            │       ├── popover.tsx
+            │       ├── table.tsx
+            │       ├── tabs.tsx
+            │       └── textarea.tsx
+            ├── lib/
+            │   └── utils.ts
+            ├── pages/
+            │   └── Home/
+            │       └── Home.tsx
+            └── redux/
+                └── authSlice.ts
+```

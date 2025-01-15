@@ -15,11 +15,10 @@ Develop a full stack Todo List application using the provided backend code for a
 
 ## Technologies Used
 
-- **Frontend**: React.js
+- **Frontend**: React.js 
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Styling**: CSS and TailwindCSS
-- **Deployment**: Hosted on [Platform Name, e.g., Heroku, Vercel, AWS]
+- **Database**: SQL
+- **Styling**: CSS and TailwindCSS, Shadcn
 
 
 ## Installation
@@ -68,12 +67,14 @@ Ensure you have the following installed on your machine:
    ```bash
    npm install
    ```
+9. Set up environment variables:
+     Create a `.env` file in the root directory. consider the `.env.example` for setting up the variables.
 
-9. Start the development server:
+10. Start the development server:
    ```bash
    npm run dev
    ```
-10. Access the backend app in your browser at `http://localhost:5173`.
+11. Access the backend app in your browser at `http://localhost:5173`.
 
 
 ## Usage

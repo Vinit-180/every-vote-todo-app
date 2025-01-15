@@ -1,50 +1,194 @@
-# React + TypeScript + Vite
+# Home Assignment: Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective  
+Develop a full stack Todo List application using the provided backend code for authentication. The application should allow users to create, read, update, and delete todo items.
 
-Currently, two official plugins are available:
+## Technologies
+- **Backend:** Express.js (authentication code provided)
+- **Frontend:** React.js (architecture is flexible)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Task Management**: Add, edit, and delete tasks with ease (CRUD Operations).
+- **Real-time Updates**: Experience smooth and seamless task updates.
+- **User-friendly Interface**: Intuitive and responsive design for all devices.
+- **Persistence**: Tasks are saved and retrieved effortlessly, ensuring no data loss.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend**: React.js 
+- **Backend**: Node.js, Express.js
+- **Database**: SQL
+- **Styling**: CSS and TailwindCSS, Shadcn
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+To get started with the Every Vote To-Do App, follow these steps:
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+- Node.js
+- MySQl
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vinit-180/every-vote-todo-app.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd every-vote-todo-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Set up environment variables:
+   
+   Create a `.env` file in the root directory. consider the `.env.example` for setting up the variables.
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Access the backend app in your browser at `http://localhost:8000`.
+
+7. Now go to `todo-app` directory:
+   ```bash
+   cd todo-app
+   ```
+
+8. Install dependencies:
+   ```bash
+   npm install
+   ```
+9. Set up environment variables:
+     Create a `.env` file in the root directory. consider the `.env.example` for setting up the variables.
+
+10. Start the development server:
+   ```bash
+   npm run dev
+   ```
+11. Access the backend app in your browser at `http://localhost:5173`.
+
+
+## Usage
+
+1. Open the app in your browser.
+2. Add tasks by typing in the input field and clicking the **Add Task** button.
+3. Delete tasks when they are completed.
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Directory structure:
+└── vinit-180-every-vote-todo-app/
+    ├── ReadMe.md
+    ├── backend.md
+    ├── package.json
+    ├── tsconfig.json
+    ├── .env.example
+    ├── src/
+    │   ├── env.ts
+    │   ├── index.ts
+    │   ├── controllers/
+    │   │   ├── index.ts
+    │   │   └── Auth/
+    │   │       ├── index.ts
+    │   │       ├── login.controller.ts
+    │   │       └── register.controller.ts
+    │   ├── db/
+    │   │   ├── db.create.ts
+    │   │   ├── db.setup.ts
+    │   │   └── index.ts
+    │   ├── entities/
+    │   │   ├── core.entity.ts
+    │   │   ├── index.ts
+    │   │   └── user.entity.ts
+    │   ├── errors/
+    │   │   ├── argumentValidation.error.ts
+    │   │   ├── custom.error.ts
+    │   │   ├── index.ts
+    │   │   └── unauthorized.error.ts
+    │   ├── middlewares/
+    │   │   ├── error.middleware.ts
+    │   │   ├── index.ts
+    │   │   └── route.middleware.ts
+    │   ├── routes/
+    │   │   ├── authRouter.ts
+    │   │   └── index.ts
+    │   ├── services/
+    │   │   ├── index.ts
+    │   │   └── user.service.ts
+    │   ├── types/
+    │   │   └── index.ts
+    │   ├── utils/
+    │   │   ├── checkAuth.ts
+    │   │   ├── encrypt.ts
+    │   │   ├── errorHandler.ts
+    │   │   ├── generate.ts
+    │   │   ├── index.ts
+    │   │   ├── logger.ts
+    │   │   ├── password.ts
+    │   │   └── validateIp.ts
+    │   └── validators/
+    │       ├── index.ts
+    │       ├── auth/
+    │       │   ├── index.ts
+    │       │   ├── login.validator.ts
+    │       │   └── register.validator.ts
+    │       └── title/
+    │           ├── createTitle.validator.ts
+    │           └── index.ts
+    └── todo-app/
+        ├── README.md
+        ├── components.json
+        ├── eslint.config.js
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── postcss.config.js
+        ├── tailwind.config.js
+        ├── tsconfig.app.json
+        ├── tsconfig.json
+        ├── tsconfig.node.json
+        ├── vite.config.ts
+        ├── .gitignore
+        ├── public/
+        └── src/
+            ├── App.css
+            ├── App.tsx
+            ├── index.css
+            ├── main.tsx
+            ├── store.ts
+            ├── vite-env.d.ts
+            ├── assets/
+            ├── components/
+            │   ├── Auth.tsx
+            │   ├── Navbar.tsx
+            │   ├── Theme-Provider.tsx
+            │   ├── Toggle.tsx
+            │   └── ui/
+            │       ├── avatar.tsx
+            │       ├── button.tsx
+            │       ├── calendar.tsx
+            │       ├── card.tsx
+            │       ├── dialog.tsx
+            │       ├── dropdown-menu.tsx
+            │       ├── input.tsx
+            │       ├── popover.tsx
+            │       ├── table.tsx
+            │       ├── tabs.tsx
+            │       └── textarea.tsx
+            ├── lib/
+            │   └── utils.ts
+            ├── pages/
+            │   └── Home/
+            │       └── Home.tsx
+            └── redux/
+                └── authSlice.ts
 ```

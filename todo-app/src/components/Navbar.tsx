@@ -13,13 +13,22 @@ import {
 import { Button } from './ui/button';
 import { Avatar, AvatarImage } from './ui/avatar';
 import { DropdownMenuGroup } from '@radix-ui/react-dropdown-menu';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Auth from './Auth';
+import { logout } from '@/redux/authSlice';
 
 const Navbar = () => {
 
-  const isAuthenticated=useSelector((state: { auth: { isAuthenticated: boolean } })=>state.auth.isAuthenticated);
-  console.log(isAuthenticated);
+  // const isAuthenticated=useSelector((state: { auth: { isAuthenticated: boolean } })=>state.auth.isAuthenticated);
+  const dispatch=useDispatch();
+  const { isAuthenticated, token } = useSelector((state: { auth: { isAuthenticated: boolean, token:  string } }) => ({
+    isAuthenticated: state.auth.isAuthenticated,
+    token: state.auth.token
+  }));
+  console.log(isAuthenticated,token);
+  const logoutUser=()=>{
+    dispatch(logout());
+  }
   return (
     <nav className="border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -37,24 +46,8 @@ const Navbar = () => {
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end" forceMount>
-              <DropdownMenuLabel className="font-normal">
-                <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">John Doe</p>
-                  <p className="text-xs leading-none text-muted-foreground">
-                    john.doe@example.com
-                  </p>
-                </div>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem >
+            <DropdownMenuContent className="w-32" align="end" forceMount>
+              <DropdownMenuItem onClick={logoutUser} >
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
